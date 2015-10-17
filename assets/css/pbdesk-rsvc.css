@@ -1,0 +1,37 @@
+#accessCode,
+#summary {
+    padding-top: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#accessCode .container .intro,
+#summary .container .intro {
+    background: #ffffff;
+    padding: 40px 25px 60px 25px;
+}
+
+#accessCode .intro-content,
+#summary .intro-content {
+    text-align: center;
+}
+#accessCode .intro-content span,
+#summary .intro-content span {
+    font-size: 18px;
+    line-height: 34px;
+    color: #8a8a8b;
+    margin-bottom: 25px;
+}
+#accessCode .intro-content p
+#summary .intro-content p {
+    font-size: 15px;
+    line-height: 27px;
+    opacity: 0.7;
+    padding: 0 50px;
+}
+
+#accessCode .btn-success {
+    background-color: #00a9ff !important;
+    color: #fff !important;
+    border-color: inherit;
+    box-shadow: inherit;
+}
