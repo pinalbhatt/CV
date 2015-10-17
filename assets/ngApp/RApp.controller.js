@@ -19,6 +19,7 @@
 
         function init() {
             $scope.data = {accessCode: 1 };
+            $scope.cvData = {};
             $scope.accessGranted = false;
             $scope.title = 'mainController';
             activateRSvc();
@@ -49,7 +50,7 @@
                 APIService.get("Access?a="+code).then(function (data) {
                     console.log(data);
                     if(data){
-                        cvData = data;
+                        $scope.cvData = data;
                         $scope.accessGranted = true;
                         $cookies.put(accessCodeCookieName, code, {'expires': d});
                     }
