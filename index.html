@@ -147,7 +147,7 @@
                                                 <div class="col m2 s12">&nbsp;</div>
                                                 <div class="input-field col m6 s12 wow fadeIn a2" data-wow-delay="0.2s">
                                                     <label for="name" class="h4">Enter Access Code</label>
-                                                    <input type="text" class="form-control validate" id="name" required data-error="NEW ERROR MESSAGE">
+                                                    <input type="text" ng-model="data.accessCode" class="form-control validate" id="name" required data-error="NEW ERROR MESSAGE">
                                                 </div>
 
                                                 <button type="submit" id="accessCodeSubmit" class="btn btn-success waves-effect wow fadeIn a7" data-wow-delay="0.7s" ng-click="requestAccess()"><i class="fa fa-send"></i></button>
@@ -876,6 +876,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-cookies.min.js"></script>
     <script src="assets/ngApp/RApp.module.js"></script>
+    <script src="assets/ngApp/RApp.APIService.js"></script>
     <script src="assets/ngApp/RApp.controller.js"></script>
     
    
