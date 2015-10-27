@@ -68,7 +68,20 @@
               percentPosition: true
             });
         });
-        
+
+        //accessCodeForm
+        $("#accessCodeForm").validator().on("submit", function (event) {
+            if (event.isDefaultPrevented()) {
+                // handle the invalid form...
+                formError();
+                submitMSG(false, "Did you fill in the form properly?", "#msgSubmit1");
+            } else {
+                // everything looks good!
+                event.preventDefault();
+                submitForm();
+            }
+        });
+
         // Contact form
         
         $("#contactForm").validator().on("submit", function (event) {
@@ -117,13 +130,14 @@
             });
         }
     
-        function submitMSG(valid, msg){
+        function submitMSG(valid, msg, id){
+            id = typeof id !== 'undefined' ?  id : "#msgSubmit";
             if(valid){
               var msgClasses = "h3 text-center fadeInUp animated text-success";
             } else {
               var msgClasses = "h3 text-center text-danger";
             }
-            $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+            $(id).removeClass().addClass(msgClasses).text(msg);
         }
         
         //Tooltip

@@ -18,7 +18,7 @@
         init();
 
         function init() {
-            $scope.data = {accessCode: 1 };
+            $scope.data = {accessCode: "" };
             $scope.cvData = {};
             $scope.accessGranted = false;
             $scope.title = 'mainController';
@@ -47,10 +47,10 @@
                 var accessCodeCookieName = "ac";
                 var d = new Date();
                 d.setMinutes(d.getMinutes() + 30);
-                APIService.get("Access?a="+code).then(function (data) {
-                    console.log(data);
-                    if(data){
-                        $scope.cvData = data;
+                APIService.get("Access?a="+code).then(function (success) {
+                    console.log(success);
+                    if(success && success.data){
+                        $scope.cvData = success.data;
                         $scope.accessGranted = true;
                         $cookies.put(accessCodeCookieName, code, {'expires': d});
                     }
