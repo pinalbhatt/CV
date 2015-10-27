@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('PBDesk.RApp', ['ngCookies']);
+        .module('PBDesk.RApp', ['ngCookies', 'ngSanitize']);
 })();

@@ -69,18 +69,6 @@
             });
         });
 
-        //accessCodeForm
-        $("#accessCodeForm").validator().on("submit", function (event) {
-            if (event.isDefaultPrevented()) {
-                // handle the invalid form...
-                formError();
-                submitMSG(false, "Did you fill in the form properly?", "#msgSubmit1");
-            } else {
-                // everything looks good!
-                event.preventDefault();
-                submitForm();
-            }
-        });
 
         // Contact form
         

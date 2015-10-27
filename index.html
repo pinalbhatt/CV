@@ -147,7 +147,7 @@
                                                 <div class="col m2 s12">&nbsp;</div>
                                                 <div class="input-field col m6 s12 wow fadeIn a2" data-wow-delay="0.2s">
                                                     <label for="name" class="h4">Enter Access Code</label>
-                                                    <input type="text" ng-model="data.accessCode" class="form-control validate" id="name" required data-error="NEW ERROR MESSAGE">
+                                                    <input type="password" ng-model="data.accessCode" class="form-control validate" id="name" required data-error="NEW ERROR MESSAGE">
                                                 </div>
                                                 <button type="submit" id="accessCodeSubmit" class="btn btn-success waves-effect wow fadeIn a7" data-wow-delay="0.7s" ng-click="requestAccess()"><i class="fa fa-send"></i></button>
                                             </form>
@@ -183,10 +183,9 @@
                         </div>
                         <div class="col m12 s12 co-centered wow fadeIn a2" data-wow-delay="0.2s">
                             <div class="intro-content">
-                                <h2>Pinal Bhatt</h2>
-                                <span>Software Engineer</span>
-                                <p>Hello Everyone! I'm Pinal Bhatt and Welcome to My Desk!. I am a software engineer, basically a <b>developer</b> and always on <em>learning ramp</em>.
-                                    I love to explore new technologeis and new gadgets. {{title}}</p>
+                                <h2>{{cvData.basics.name}}</h2>
+                                <span>{{cvData.basics.tagLine}}</span>
+                                <p ng-bind-html="cvData.basics.intro"></p>
                                 <a href="#" class="btn waves-effect" style="width:180px; text-transform: none"><i class="fa fa-download"></i> Download CV</a>
                                 <a href="#contact-form" class="btn btn-success waves-effect" style="width:180px; text-transform: none">Contact Me</a>
                                 <br/>
@@ -873,6 +872,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-cookies.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js"></script>
     <script src="assets/ngApp/RApp.module.js"></script>
     <script src="assets/ngApp/RApp.APIService.js"></script>
     <script src="assets/ngApp/RApp.controller.js"></script>

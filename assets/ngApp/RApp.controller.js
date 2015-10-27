@@ -42,8 +42,22 @@
             }
         }
 
+        function submitMSG(valid, msg){
+            if(valid){
+                var msgClasses = "h3 text-center fadeInUp animated text-success";
+            } else {
+                var msgClasses = "h3 text-center text-danger";
+            }
+            $("#msgSubmit1").removeClass().addClass(msgClasses).text(msg);
+        }
+
         function verifyAccessCode(code){
-            if(code !== undefined && isFinite(code)){
+
+            if(code !== undefined){
+                if(code.toString().trim().length === 0 ){
+                    submitMSG(false, "Please enter access code.");
+                    return;
+                }
                 var accessCodeCookieName = "ac";
                 var d = new Date();
                 d.setMinutes(d.getMinutes() + 30);
@@ -56,7 +70,7 @@
                     }
 
                 }, function (error) {
-                    console.log(error);
+                    submitMSG(false, "Invalid Access Code.");
                 });
             }
 
