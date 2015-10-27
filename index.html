@@ -69,8 +69,8 @@
                 <div class="row" ng-if="accessGranted == true">
                     <div class="top-contact col m12 s12 right">
                         <span><i class="fa fa-twitter"></i> <a target="_blank" href="https://twitter.com/pbdesk">@PBDesk</a></span>
-                        <span><i class="fa fa-envelope"></i> <a href="mailto:">self@PBDesk.io</a></span>
-                        <span><i class="fa fa-phone"></i> <a href="tel:">+1 (732) 397 0435 </a></span>
+                        <span><i class="fa fa-envelope"></i> <a ng-href="mailto:{{cvData.basics.email}}">{{cvData.basics.email}}</a></span>
+                        <span><i class="fa fa-phone"></i> <a ng-href="tel:{{cvData.basics.phone}}">{{cvData.basics.phone}} </a></span>
                     </div>  
                 </div>
             </div>
@@ -85,8 +85,8 @@
                             <nav class="nav-wrap" >
                                 <ul class="hide-on-med-and-down group"  id="example-one">
                                     <li class="current_page_item"><a href="#">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#summary">Summary</a></li>
+                                    <li ng-if="accessGranted == true"><a href="#about">About</a></li>
+                                    <li ng-if="accessGranted == true"><a href="#summary">Summary</a></li>
                                     <li><a href="#skills">Skills</a></li>                                
                                     <li><a href="#works">Works</a></li>                                
                                     <li><a href="#portfolio">Portolio</a></li>                                
@@ -98,8 +98,8 @@
                                 </ul>
                                 <ul class="side-nav" id="slide-out">
                                     <li><a href="#" class="active">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#summary">Summary</a></li>
+                                    <li ng-if="accessGranted == true"><a href="#about">About</a></li>
+                                    <li ng-if="accessGranted == true"><a href="#summary">Summary</a></li>
                                     <li><a href="#skills">Skills</a></li>                                
                                     <li><a href="#works">Works</a></li>                                
                                     <li><a href="#portfolio">Portolio</a></li>                                
@@ -178,7 +178,7 @@
                     <div class="intro z-depth-1 col m12">
                         <div class="col m12 s12">
                             <div class="profile-pic wow fadeIn a1" data-wow-delay="0.1s" >
-                                <img src="assets/images/proflpic.png" alt="">
+                                <img ng-src="{{cvData.basics.picture}}" alt="">
                             </div>
                         </div>
                         <div class="col m12 s12 co-centered wow fadeIn a2" data-wow-delay="0.2s">
@@ -218,7 +218,7 @@
 
                         <div class="col m12 s12 co-centered wow fadeIn a2" data-wow-delay="0.2s">
                             <div class="intro-content">
-                                <p>I am a software engineer with 15+ years of experience in Information Technology field with 10+ years of software development experience in capacity as Developer, Senior Software Engineer, Tech Lead & Release Lead.  I aim to seek a challenging position in Software Development Industry using my vast experience in technologies like .Net, ASP.NET, MVC, Web API, JavaScript, NodeJS & Angular.  Of particular interest would be those, which can take advantage of my skills in Design, Development, Testing, Implementation and Support.</p>
+                                <p ng-bind-html="cvData.basics.summary" style="text-align: justify"></p>
                             </div>
                         </div>
                     </div>

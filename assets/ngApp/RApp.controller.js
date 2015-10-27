@@ -9,7 +9,7 @@
 
     function mainController($scope, $rootScope, $cookies, APIService) {
 
-
+        var accessCodeCookieName = "ac";
 
         $scope.requestAccess = function(){
             verifyAccessCode($scope.data.accessCode);
@@ -23,6 +23,11 @@
             $scope.accessGranted = false;
             $scope.title = 'mainController';
             activateRSvc();
+
+            var ac = $cookies.get(accessCodeCookieName);
+            if(ac){
+                verifyAccessCode(ac);
+            }
 
         }
 
@@ -58,7 +63,7 @@
                     submitMSG(false, "Please enter access code.");
                     return;
                 }
-                var accessCodeCookieName = "ac";
+
                 var d = new Date();
                 d.setMinutes(d.getMinutes() + 30);
                 APIService.get("Access?a="+code).then(function (success) {
