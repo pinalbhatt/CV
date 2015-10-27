@@ -54,7 +54,7 @@ $(document).ready(function() {
     /***************************************************************************
           CONTACT FORM
     ***************************************************************************/
-
+/*
       $("#contactForm").validator().on("submit", function (event) {
       if (event.isDefaultPrevented()) {
           // handle the invalid form...
@@ -65,7 +65,7 @@ $(document).ready(function() {
           event.preventDefault();
           submitForm();
       }
-  });
+  });*/
 
 
   function submitForm(){
@@ -115,7 +115,7 @@ $(document).ready(function() {
               MAP
 ***************************************************************************/
 
-    google.maps.event.addDomListener(window, 'load', init);
+    /*google.maps.event.addDomListener(window, 'load', init);
     function init() {
       var mapOptions = {
           zoom: 17,
@@ -144,6 +144,6 @@ $(document).ready(function() {
           title: '24 Golden Tower (2nd floor), Amborkhana, Sylhet.!'
           
       });
-    }
+    }*/
 
   

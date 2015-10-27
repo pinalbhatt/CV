@@ -2,7 +2,7 @@
 <!--[if IE 7]><html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
 <!--[if IE 8]><html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en">
+<html lang="en"  ng-app="PBDesk.SpaCVApp" ng-controller="mainController">
     <head>
         <meta charset="utf-8">
         
@@ -233,6 +233,7 @@
                 ==========================================-->
 
                 <section class="col s12 m12 l8 section">
+                    <div ng-view></div>
                     <div class="row">
                         <div class="section-wrapper z-depth-1">                            
                             <div class="section-icon col s12 m12 l2">
@@ -349,6 +350,18 @@
         
         <!-- Customized js -->
         <script src="assets/js/init.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-cookies.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js"></script>
+
+        <script src="assets/ngApp/SpaCVApp.module.js"></script>
+        <script src="assets/ngApp/SpaCVApp.APIService.js"></script>
+        <script src="assets/ngApp/SpaCVApp.controller.js"></script>
+        <script src="assets/ngApp/views/home/homeController.js"></script>
+        <script src="assets/ngApp/views/contact/contactController.js"></script>
+        <script src="assets/ngApp/views/summary/summaryController.js"></script>
 
     </body>
 </html>
