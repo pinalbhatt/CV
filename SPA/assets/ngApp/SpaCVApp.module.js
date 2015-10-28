@@ -27,5 +27,7 @@
                 controllerAs: 'vm'
             })
             .otherwise( { redirectTo: '/' } );
+
+
     });
 })();

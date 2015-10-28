@@ -15,6 +15,8 @@
             verifyAccessCode($scope.data.accessCode);
         }
 
+        $scope.testP = "abcxyz";
+
         init();
 
         function init() {

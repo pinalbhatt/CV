@@ -14,6 +14,8 @@
 
         init();
 
-        function init() { }
+        function init() {
+            vm.testP = vm.parent.testP;
+        }
     }
 })();
